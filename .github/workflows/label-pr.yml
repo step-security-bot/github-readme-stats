@@ -2,10 +2,6 @@ name: "Pull Request Labeler"
 on:
   - pull_request_target
 
-permissions:
-  contents: 'read'
-  pull-requests: 'write'
-
 jobs:
   triage:
     if: github.repository == 'meyer-pidiache/github-readme-stats'
@@ -13,4 +9,4 @@ jobs:
     steps:
       - uses: actions/labeler@v4
         with:
-          repo-token: "${{ secrets.G_TOKEN }}"
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
