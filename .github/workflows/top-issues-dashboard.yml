@@ -33,6 +33,11 @@ jobs:
     name: Update top issues Dashboard.
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@8ca2b8b2ece13480cda6dacd3511b49857a23c09 # v2.5.1
+        with:
+          egress-policy: audit
+
       - name: Run top issues action
         uses: rickstaa/top-issues-action@c66e5d53ffc26f7ae020ff8454582884d4af4cdb # v1.3.32
         env:
